@@ -31,17 +31,15 @@ public class Steuerung {
 	}
 
 	private void warmwasserHeizenBrenner(double Temperatur){
-		while(warmwasser.getMaxTemperatur()<=Temperatur){
-			if(kessel.getTemperatur()>=(warmwasser.getMaxTemperatur()+5){
+		while(kessel.getTemperatur()<70){
+			brenner.ein();
+			if(warmwasser.getMinTemperatur()<=kessel.getTemperatur()){
 				warmwasser.laden();
-			}
-			else{ if(kessel.getTemperatur()<=warmwasser.getMaxTemperatur()+5){
-				while(kessel.getTemperatur()<=70){
-					brenner.ein();
-				}
-				brenner.aus();
+			}else{
+				warmwasser.aus();
 			}
 		}
+		brenner.aus();
 	}
 	
 	
