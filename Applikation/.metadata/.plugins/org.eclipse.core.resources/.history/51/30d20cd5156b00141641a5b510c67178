@@ -1,0 +1,14 @@
+
+public class Steuerung {
+	private Pumpe BWLP, HK1P, FBHP, BWZP, SolP;
+	private Mischer FBH;
+	private Ventil Solar, Puffer;
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
