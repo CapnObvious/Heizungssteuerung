@@ -18,6 +18,5 @@ public class Pumpe {
 	
 	public void aus(){
 		this.zustand=false;
-		gpio.ausgangSchalten(adresse);
 	}
 }

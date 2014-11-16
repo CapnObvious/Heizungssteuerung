@@ -2,12 +2,9 @@
 public class Brenner {
 	private boolean zustand;
 	private int adresse;
-	private GPIO gpio;
-	
-	public Brenner(int Adresse, GPIO Gpio){
+	public Brenner(int Adresse){
 		this.adresse=Adresse;
 		zustand=false;
-		this.gpio=Gpio;
 	}
 	
 	public void ein(){

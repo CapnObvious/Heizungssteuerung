@@ -9,25 +9,10 @@ public class Steuerung {
 	private Pufferspeicher puffer;
 	private Brenner brenner;
 	private Fühler kessel, solar;
-	private Heizkreis heizkörper;
-	private Fußbodenheizung fußbodenheizung;
 	
 	
 	public Steuerung(){
 		gpio=new GPIO();
-<<<<<<< HEAD
-		solarventil=new Ventil(015, 016);
-		pufferventil=new Ventil(013, 014);
-		zirkulation=new Pumpe(004);
-		solarpumpe=new Pumpe(005);
-		warmwasser=new Speicher(new Fühler(104), new Fühler(105), new Pumpe(003));
-		puffer= new Pufferspeicher(new Fühler(106), new Fühler(107));
-		brenner=new Brenner(201);
-		kessel=new Fühler(101);
-		solar=new Fühler(102);
-		heizkörper=new Heizkreis(new Pumpe(001));
-		fußbodenheizung=new Fußbodenheizung(new Pumpe(002), new Fühler(103), new Mischer(011, 012));
-=======
 		solarventil=new Ventil(015, 016, gpio);
 		pufferventil=new Ventil(013, 014, gpio);
 		zirkulation=new Pumpe(004, gpio);
@@ -37,7 +22,6 @@ public class Steuerung {
 		brenner=new Brenner(201, gpio);
 		kessel=new Fühler(101, gpio);
 		solar=new Fühler(102, gpio);
->>>>>>> 007a6ec86577c5e36983d20ecb1e26b9efba0c76
 	}
 	
 	
@@ -46,33 +30,17 @@ public class Steuerung {
 
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	private void warmwasserHeizenBrenner(double Temperatur){
-		while(warmwasser.getMaxTemperatur()<=Temperatur){
-			if(kessel.getTemperatur()>=(warmwasser.getMaxTemperatur()+5){
+		while(kessel.getTemperatur()<70){
+			brenner.ein();
+			if(warmwasser.getMinTemperatur()<=kessel.getTemperatur()){
 				warmwasser.laden();
-			}
-			else{ if(kessel.getTemperatur()<=warmwasser.getMaxTemperatur()+5){
-				while(kessel.getTemperatur()<=70){
-					brenner.ein();
-				}
-				brenner.aus();
+			}else{
+				warmwasser.aus();
 			}
 		}
+		brenner.aus();
 	}
-	
-	
 	
 	
 	
