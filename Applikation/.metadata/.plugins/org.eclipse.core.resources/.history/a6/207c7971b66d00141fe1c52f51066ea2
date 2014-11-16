@@ -1,3 +1,5 @@
+import 
+
 
 public class Fußbodenheizung {
 	private Pumpe pumpe;
@@ -23,10 +25,10 @@ public class Fußbodenheizung {
 	}
 	
 	private void run(){
-		while(true){
+		while(1){
 			pumpe.ein();
 			if(zustand){
-			if(vorlauf.getTemperatur() >= sollTemperatur){
+			if(vorlauf.getTemperatur()=>sollTemperatur){
 				mischer.zu();
 			}
 			else{
@@ -41,4 +43,3 @@ public class Fußbodenheizung {
 		}
 	}
 }
-

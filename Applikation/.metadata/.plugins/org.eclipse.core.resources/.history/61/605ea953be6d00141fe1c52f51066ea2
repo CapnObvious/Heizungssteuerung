@@ -9,8 +9,6 @@ public class Steuerung {
 	private Pufferspeicher puffer;
 	private Brenner brenner;
 	private Fühler kessel, solar;
-	private Heizkreis heizkörper;
-	private Fußbodenheizung fußbodenheizung;
 	
 	
 	public Steuerung(){
@@ -24,8 +22,6 @@ public class Steuerung {
 		brenner=new Brenner(201);
 		kessel=new Fühler(101);
 		solar=new Fühler(102);
-		heizkörper=new Heizkreis(new Pumpe(001));
-		fußbodenheizung=new Fußbodenheizung(new Pumpe(002), new Fühler(103), new Mischer(011, 012));
 	}
 	
 	
@@ -34,18 +30,6 @@ public class Steuerung {
 
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	private void warmwasserHeizenBrenner(double Temperatur){
 		while(kessel.getTemperatur()<70){
 			brenner.ein();
@@ -56,8 +40,6 @@ public class Steuerung {
 			warmwasser.laden();
 		}}
 	}
-	
-	
 	
 	
 	

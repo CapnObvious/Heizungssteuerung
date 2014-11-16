@@ -34,18 +34,6 @@ public class Steuerung {
 
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	private void warmwasserHeizenBrenner(double Temperatur){
 		while(kessel.getTemperatur()<70){
 			brenner.ein();
@@ -56,8 +44,6 @@ public class Steuerung {
 			warmwasser.laden();
 		}}
 	}
-	
-	
 	
 	
 	
