@@ -1,0 +1,12 @@
+import java.util.Calendar;
+
+public class Zeitschaltuhr {
+	private Calendar uhr;
+	
+	public Zeitschaltuhr(){
+		uhr=Calendar.getInstance();
+	};
+	
+	
+
+}

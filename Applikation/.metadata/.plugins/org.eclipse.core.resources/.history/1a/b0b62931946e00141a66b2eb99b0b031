@@ -1,0 +1,12 @@
+import java.util.Calendar;
+import java.util.Observable;
+
+public class Zeitschaltuhr extends Observable {	
+	private Calendar uhr;
+	
+	public Zeitschaltuhr(){
+		uhr.getInstance();
+	}
+	
+	public 
+}

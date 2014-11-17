@@ -1,0 +1,12 @@
+import java.util.Calendar;
+
+public class Timer {
+	private Calendar uhr;
+	
+	public Timer(){
+		uhr=Calendar.getInstance();
+	};
+	
+	
+
+}
